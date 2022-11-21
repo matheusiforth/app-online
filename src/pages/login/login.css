@@ -1,0 +1,66 @@
+ @media only screen and (min-width: 360px) and (min-height: 640px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+ }
+
+ @media only screen and (min-width: 360px) and (min-height: 710px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 375px) and (min-height: 667px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 375px) and (min-height: 812px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 411px) and (min-height: 731px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 768px) and (min-height: 1024px) {
+    .LogoLoginIcep {
+       width: 50%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 1366px) and (min-height: 768px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ @media only screen and (min-width: 1920px) and (min-height: 1080px) {
+    .LogoLoginIcep {
+       width: 12%;
+       background-color: #e2e2ee;
+    }
+
+ }
+
+ .inputLogin:autofill {
+    background-color: red;
+ }

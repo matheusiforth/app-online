@@ -1,0 +1,25 @@
+:root{
+    background-color: #f8f8f8;
+}
+
+.gridHome{
+    background-color: #e2e2ee;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: scroll;
+}
+
+/* @media (max-width: 1024px){
+    .gridHome{
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+
+@media (max-width: 1024px){
+    .gridHome{
+        grid-template-columns: 1fr;
+    }
+}
+
+.teste{
+    background-color: aqua;
+}
