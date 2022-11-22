@@ -24,8 +24,10 @@ export function Search({ children }) {
             bg='white'
             w={['600px', '600px', '600px', '600px', '800px', '900px']}
             maxWidth='900px' h={['3rem', '3rem', '4rem', '2rem', '3rem',]}
-            maxHeight='4rem' px='1rem' py={['0.25rem', '0.25rem', '0.25rem', '0.18rem']}
-            borderRadius='full'
+            maxHeight='2.5rem' 
+            px='1rem' 
+            py={['0.25rem', '0.25rem', '0.25rem', '0.18rem']}
+            borderRadius='8px'
             justify='center'
             align='center'
             position='absolute'

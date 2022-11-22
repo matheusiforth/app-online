@@ -1,19 +1,57 @@
 import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, useBreakpointValue, Flex, Stack, DrawerFooter, Button, Icon, IconButton, Text, Spacer, Input } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { BsCheck2All } from 'react-icons/bs';
-// import { Api } from '../../../context/api/api';
-// import GetCookie from '../../../context/cookies/get';
 import { BiFilter } from 'react-icons/bi'
 import { FiTrash2 } from 'react-icons/fi'
-// import { PeriodoButton } from './button/periodo';
 import { Lista } from '../genericos/dropList';
 import { DataFinal } from '../genericos/buttonDataFinal';
 import { DataInicial } from '../genericos/buttonDataInicial';
+import { PeriodoButton } from '../genericos/periodo';
+import { SetCookie } from '../../context/cookies/set';
 
+function leftPad(value, totalWidth, paddingChar) {
+    var length = totalWidth - value.toString().length + 1;
+    return Array(length).join(paddingChar || '0') + value;
+}
 
+function DtOntem() {
+    var data = new Date(Date());
+    return leftPad(data.getDate(), 2) + '/' + leftPad((data.getMonth() + 1), 2) + '/' + data.getFullYear()
+}
 
-export function FiltroParada() {
+function DtAtual() {
+    var data = new Date();
+    return leftPad(data.getDate(), 2) + '/' + leftPad((data.getMonth() + 1), 2) + '/' + data.getFullYear()
+}
+
+console.log(DtAtual())
+
+function DtInicio() {
+    var data = new Date();
+    return '01/' + leftPad((data.getMonth() + 1), 2) + '/' + data.getFullYear()
+}
+
+function DtFinal() {
+    var data = new Date();
+    const lastDay = new Date(data.getFullYear(), data.getMonth() + 1, 0);
+    const lastDayDate = lastDay.toLocaleDateString()
+    return lastDayDate
+}
+
+export function FiltroParada(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    // const [dataInicial, setDataInicial] = useState();
+    // const [dataFinal, setDataFinal] = useState();
+
+    function Fechar() {
+        onClose();
+        (props.data())
+    }
+
+    function Abrir() {
+        onOpen();
+    }
+
 
     // const [teste, setTeste] = useState('')
 
@@ -31,11 +69,10 @@ export function FiltroParada() {
     // })
 
     return (
-        // <Flex w='1fr' h='5rem' px='1.50rem' align='center' bg='#2C2C57' boxShadow='xl'>
         <>
-            <Button onClick={onOpen} border='1px solid blue' color='#616161' textTransform='uppercase' size='sm'> <BiFilter fontSize='1.5rem' color='blue' cursor='pointer' /> Filtros</Button>
+            <Button onClick={Abrir} border='1px solid blue' color='#616161' textTransform='uppercase' size='sm'> <BiFilter fontSize='1.5rem' color='blue' cursor='pointer' /> Filtros</Button>
 
-            <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+            <Drawer isOpen={isOpen} placement='right' onClose={Fechar}>
                 <DrawerOverlay />
                 <DrawerContent color='white' bg='#2C2C57'>
 
@@ -48,11 +85,11 @@ export function FiltroParada() {
                                 <option>rc4</option>
                                 <option>rc1</option>
                             </Lista>
-                            
-                            {/* <div>
+
+                            <div>
                                 <label style={{ fontWeight: 'bold' }}>PERÍODO</label>
                                 <PeriodoButton />
-                            </div> */}
+                            </div>
 
                             <div>
                                 <DataInicial />

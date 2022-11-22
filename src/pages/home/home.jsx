@@ -43,7 +43,6 @@ export function Home() {
             Api.get('/v1/web/acessado/' + GetCookie('idusu') + '/' + unidadeSelecionada + '/1' + '/ALL').then(
                 function (response) {
                     setDadosCard(response.data)
-
                 })
         }
     }, [unidadeSelecionada]);
@@ -55,7 +54,7 @@ export function Home() {
                 <Input
                     onChange={(ev) => setDadosDigitados(ev.target.value)}
                     h={['3rem', '3rem', '3rem', '1.75rem']}
-                    maxHeight='3rem'
+                    maxHeight='2rem'
                     w='100%'
                     maxWidth='100%'
                     bg='white'

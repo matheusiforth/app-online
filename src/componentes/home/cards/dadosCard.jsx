@@ -4,6 +4,7 @@ import { BsBarChart } from "react-icons/bs";
 import LogoIcepHome from '../../../imagens/logounica.png'
 
 export function DadosCard(props) {
+    // console.log(props)
     
     return (
         <>      

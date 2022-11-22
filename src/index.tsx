@@ -8,9 +8,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <ChakraProvider>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
       <AppRoutes />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
   </ChakraProvider>
 );
 

@@ -6,7 +6,7 @@ interface ButtonProps extends ChakraButtonProps {
 
 export function PeriodoButton({ name, ...rest }: ButtonProps) {
     return (
-        <Stack direction='row' spacing='5px' mt='5px'>
+        <Stack direction='row' bg='white' spacing='5px'>
             <ChakraButton
                 name="Button"
                 id="Button"

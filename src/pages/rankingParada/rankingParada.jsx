@@ -1,13 +1,45 @@
 import { Flex, Grid, Spacer, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { RiContactsBookLine } from "react-icons/ri";
 import { Header } from "../../componentes/header/header";
 import { CardTeste } from "../../componentes/home/cards/cardTeste";
 import { FiltroParada } from "../../componentes/rankingParada/filtroParada";
+import { Grafico } from "../../componentes/rankingParada/grafico";
 import { GraficoParada } from "../../componentes/rankingParada/graficoParada";
+import { Api } from "../../context/api/api";
 import { AutenticacaoContext } from "../../context/autenticacao";
+import GetCookie from "../../context/cookies/get";
 
-export function RankingParada(props) {
-    // console.log(props)
+var dadosGraficoBackup = []
 
+export function RankingParada() {
+
+    const [dadosGrafico, setDadosGrafico] = useState(dadosGraficoBackup);
+
+    {/*
+     const [linhaSelecionada, setLinhaSelecionada] = useState(1);
+     const [diaInicial, setDiaInicial] = useState(1);
+     const [mesInicial, setMesInicial] = useState(10);
+     const [anoInicial, setAnoInicial] = useState(2022);
+
+     const [diaFinal, setDiaFinal] = useState(2);
+     const [mesFinal, setMesFinal] = useState();
+     const [anoFinal, setAnoFinal] = useState();
+     const [verifica, setVerifica] = useState(false);
+
+     const [teste, setTeste] = useState([]);
+    */}
+
+    var linhaSelecionada = 1
+
+    const teste = () => {
+        Api.get('/v1/web/rank/parada/' + 1 + '/' + 1 + '/' + 10 + '/' + 2022 + '/' + 31 + '/' + 10 + '/' + 2022 + '/10').then(
+            function (response) {
+                dadosGraficoBackup = response.data;
+                setDadosGrafico(dadosGraficoBackup);
+            })
+    }
+    console.log('response')
     return (
         <Flex flexDir='column'>
             <Header />
@@ -24,18 +56,14 @@ export function RankingParada(props) {
                                 Nenhuma linha selecionada
                             </Text>
                             <Spacer />
-                            <FiltroParada />
+                            <FiltroParada data={teste} />
 
                         </Flex>
 
                     </AutenticacaoContext.Provider>
 
-                    <Grid>
+                    <Grafico data={dadosGrafico} />
 
-                        {/* <CardBox data={dadosCard} /> */}
-                        <Flex align='center' justify='center' color='black' bg='white' boxShadow='xl' mt='1rem' h='3rem'>Sem dados</Flex>
-                        {/* <Flex> <GraficoParada /> </Flex> */}
-                    </Grid>
                 </Flex>
             </Flex>
         </Flex>
