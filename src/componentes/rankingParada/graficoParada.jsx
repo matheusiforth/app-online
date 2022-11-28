@@ -89,7 +89,7 @@ export function GraficoParada(props) {
     // console.log(labels)
 
     return (
-        <Flex h='100%' pt='5px'> < Doughnut options={options} data={data} /> </Flex>
+        <Flex h='100%' pt='5px'> <Doughnut options={options} data={data} /> </Flex>
     )
 }
 

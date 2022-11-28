@@ -3,9 +3,9 @@ import { Input } from "@chakra-ui/react";
 export function Referencia(){
     return(
         <div>
-            <label style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Referência</label>
+            <label style={{ fontWeight: 'bold' }}>Referência</label>
             <Input
-                placeholder="Selecione a data final"
+                placeholder="Referência"
                 size="md"
                 type="text"
                 color='white'

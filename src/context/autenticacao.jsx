@@ -25,7 +25,6 @@ export const AutenticacaoProvider = ({ children }) => {
     encodedAuth = new Buffer(encodedAuth).toString("base64");
     encodedAuth = new Buffer(encodedAuth).toString("base64");
     encodedAuth = 'iforth ' + encodedAuth;
-    console.log(senha)
 
     const apiLocal = axios.create({
       baseURL: "http://192.168.3.251:8081/",
@@ -35,7 +34,6 @@ export const AutenticacaoProvider = ({ children }) => {
       function (response) {
         if (response.status == 200) {
           try {
-            console.log(response.data)
             apiLocal.post('v1/basic', response.data).then((response) => {
               if (response.status == 200) {
                 apiLocal.post('v1/token', response.data).then(

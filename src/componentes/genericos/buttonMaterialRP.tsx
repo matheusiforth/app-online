@@ -8,7 +8,7 @@ interface ButtonProps extends ChakraButtonProps {
 export function ButtonMaterialRP({ name, label, ...rest }: ButtonProps) {
     return (
         <>
-            {!!label && <FormLabel textTransform='uppercase' fontWeight='bold' htmlFor={name}>{label}</FormLabel>}
+            {!!label && <FormLabel fontWeight='bold' htmlFor={name}>{label}</FormLabel>}
             <Stack direction='row' spacing='5px' mt='5px'>
 
                 <ChakraButton

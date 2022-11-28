@@ -1,6 +1,6 @@
 import React from "react";
 import { createRef, useContext, useState } from 'react';
-import { Flex, Stack, Button, Img, Input, Box, Text } from '@chakra-ui/react';
+import { Flex, Stack, Button, Img, Input, Box, Text, InputGroup, InputRightElement } from '@chakra-ui/react';
 import LogoIcepLogin from '../../imagens/Logoicep.png'
 import '../login/login.css'
 import { AutenticacaoContext } from '../../context/autenticacao';
@@ -35,7 +35,6 @@ export function Login() {
     //     Array.from({ length: 2 }, () => createRef())
     // );
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         login(user, senha);
@@ -53,6 +52,8 @@ export function Login() {
             login(user, senha);
         }
     }
+    const [show, setShow] = React.useState(false)
+    const handleClick = () => setShow(!show)
 
     // console.log(autenticado);
 
@@ -92,6 +93,7 @@ export function Login() {
 
                     <Box bg='#454588' align='center' w='100%' h={['120px', '120px', '120px', '100.5px', '100.5px', '100px',]} maxHeight='225px'>
                         <Text color='white' fontSize={['80px', '16px', '50px', '24px',]}>Senha</Text>
+                        <InputGroup justify='center' align='center'>
                             <Input
                                 bg='white'
                                 h={['20px', '20px', '100px', '50px',]}
@@ -99,7 +101,7 @@ export function Login() {
                                 onKeyPress={onKeySubmit}
                                 id='senha'
                                 name='senha'
-                                type='password'
+                                type={show ? 'text' : 'password'}
                                 placeholder='Digite sua Senha'
                                 focusBorderColor="#00f4ff"
                                 border='3px solid'
@@ -112,6 +114,12 @@ export function Login() {
                                 _autofill={{ bgColor: 'red.500' }}
                                 className='inputLogin'
                             />
+                            <InputRightElement width='4.5rem' bg='#ced4d3' color='black' justify='center' align='center' mt='2.5px'>
+                                <Button h='1.75rem' size='sm' onClick={handleClick} justify='center' align='center' bg='#ced4d3'>
+                                    {show ? 'Esconda' : 'Mostre'}
+                                </Button>
+                            </InputRightElement>
+                        </InputGroup>
                     </Box>
 
                     <Button

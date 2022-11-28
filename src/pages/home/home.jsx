@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, Grid, Input, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Grid, Input, useBreakpointValue } from "@chakra-ui/react";
 import GetCookie from "../../context/cookies/get";
 import './home.css'
 import { Api } from '../../context/api/api';
 import { CardTeste } from '../../componentes/home/cards/cardTeste';
 import { Cabecalho } from '../../componentes/home/cabecalho';
-import { DadosCard } from '../../componentes/home/cards/dadosCard';
 import { HeaderHome } from '../../componentes/home/headerHome/headerHome';
 import { Search } from '../../componentes/home/headerHome/search/search';
+import { DadosCard } from '../../componentes/home/cards/dadosCard';
 
 export function Home() {
 
@@ -52,7 +52,7 @@ export function Home() {
             <HeaderHome />
             <Search>
                 <Input
-                    onChange={(ev) => setDadosDigitados(ev.target.value)}
+                    onChange={((ev) => setDadosDigitados(ev.target.value) ?? null)} //TESTASAR SGV-PJERGBREPOGKOGARKV´PWJKP0´VEGRDK
                     h={['3rem', '3rem', '3rem', '1.75rem']}
                     maxHeight='2rem'
                     w='100%'

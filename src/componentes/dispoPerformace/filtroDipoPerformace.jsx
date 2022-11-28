@@ -1,14 +1,10 @@
-import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, useBreakpointValue, Flex, Stack, DrawerFooter, Button, Icon, IconButton, Text, Spacer, Input } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure, Stack, DrawerFooter, Button, Text } from '@chakra-ui/react';
 import { BsCheck2All } from 'react-icons/bs';
 import { BiFilter } from 'react-icons/bi'
 import { FiTrash2 } from 'react-icons/fi'
 import { Lista } from '../genericos/dropList';
-import { DataFinal } from '../genericos/buttonDataFinal';
-import { DataInicial } from '../genericos/buttonDataInicial';
 
-
-
-export function FiltroDefeito({ data }) {
+export function FiltroDispoPerformace() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -24,18 +20,10 @@ export function FiltroDefeito({ data }) {
                     <DrawerBody>
 
                         <Stack spacing='2rem'>
-                            <Lista label="LINHAS">
+                            <Lista label="Linha Mestre">
                                 <option>rc4</option>
                                 <option>rc1</option>
                             </Lista>
-
-                            <div>
-                                <DataInicial />
-                            </div>
-
-                            <div>
-                                <DataFinal />
-                            </div>
 
                         </Stack>
 

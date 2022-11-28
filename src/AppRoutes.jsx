@@ -4,10 +4,10 @@ import { AutenticacaoContext, AutenticacaoProvider } from './context/autenticaca
 import { Home } from './pages/home/home';
 import { Teste } from './Teste';
 import { useContext } from 'react';
-import { RankingParada } from './pages/rankingParada/rankingParada';
 import { Global } from './utils/Global'
-import { RankingDefeito } from './pages/rakingDefeito/rankingDefeito';
-import { RankingDefeitoBarrado } from './pages/rankingDefeitoBarrado/RankingDefeitoBarrado';
+import { DispoPerformace } from './pages/dispoPerformace/dispoPerformace';
+import { RetornaPDDB } from './pages/parada-defeito-defeitoBarrado/RetornaPDDB';
+import { ChamadaStatusColetores } from './pages/statusColetores/chamadaStatusColetores';
 
 export function AppRoutes() {
 
@@ -28,15 +28,17 @@ export function AppRoutes() {
       <AutenticacaoProvider>
         <Global />
         {/* <Header /> */}
-          <Routes>
-            <Route path='/' element={<Login />} />
-            {/* <Route path='/home' element={ <Private> <Home /> </Private> } /> */}
-            <Route path='/home' element={<Home />} />
-            <Route path='/teste' element={<Teste />} />
-            <Route path='/parada' element={<RankingParada />} />
-            <Route path='/defeito' element={<RankingDefeito />} />
-            <Route path='/defeitoBarrado' element={<RankingDefeitoBarrado />} />
-          </Routes>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          {/* <Route path='/home' element={ <Private> <Home /> </Private> } /> */}
+          <Route path='/home' element={<Home />} />
+          <Route path='/teste' element={<Teste />} />
+          <Route path='/parada' element={<RetornaPDDB type={1} />} />
+          <Route path='/defeito' element={<RetornaPDDB type={2} />} />
+          <Route path='/defeitoBarrado' element={<RetornaPDDB type={3} />} />
+          <Route path='/dispoPerformace' element={<DispoPerformace />} />
+          <Route path='/statusColetores' element={<ChamadaStatusColetores />} />
+        </Routes>
       </AutenticacaoProvider>
     </BrowserRouter>
   );
